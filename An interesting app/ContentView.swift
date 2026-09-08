@@ -11,7 +11,7 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             TabView {
-                Tab("Home") {
+                Tab("Home", systemImage: "house.fill") {
                     VStack {
                         Image("Eevee")
                             .resizable()
