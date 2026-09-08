@@ -19,13 +19,13 @@ struct ContentView: View {
                             .frame(width: 300, height: 300)
                             .clipShape(Circle())
                         List {
-                            Button("Tackle") {
+                            Button("Tackle!") {
                                 
                             }
-                            Button("Swift") {
+                            Button("Swift!") {
                                 
                             }
-                            Button("Double-edge") {
+                            Button("Double-edge!") {
                                 
                             }
 
