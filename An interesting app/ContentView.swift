@@ -8,6 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var eeveeUsed = false
+    @State var pikachuUsed = false
+    @State var mewtwoBattle = false
+    @State var moltresBattle = false
+    @State var zapdosBattle = false
+    @State var articunoBattle = false
     var body: some View {
         NavigationStack {
             TabView {
@@ -15,28 +21,37 @@ struct ContentView: View {
                     VStack {
                         List {
                             Text("Choose your pokemon!!!")
-                            Image("Eevee")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 300, height: 300)
-                                .clipShape(Circle())
-                                .contextMenu {
-                                    Button("Tackle") {
-                                        
+                            HStack {
+                                Image("eevee")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 220, height: 220)
+                                    .clipShape(Rectangle())
+                                    .contextMenu {
+                                        Text("Eevee")
+                                        Text("Moves:")
+                                        Button("Tackle") {
+                                            
+                                        }
+                                        Button("Swift") {
+                                            
+                                        }
+                                        Button("Double-edge") {
+                                            
+                                        }
                                     }
-                                    Button("Swift") {
-                                        
-                                    }
-                                    Button("Double-edge") {
-                                        
-                                    }
-                                }
+                                Toggle("", isOn: $eeveeUsed)
+                            }
+                            HStack {
                                 Image("Pikachu")
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                                     .frame(width: 200, height: 200)
                                     .clipShape(Rectangle())
                                     .contextMenu {
+                                        Text("Pikachu")
+                                        Text("Moves:")
+                                        
                                         Button("Thunderbolt") {
                                             
                                         }
@@ -50,18 +65,55 @@ struct ContentView: View {
                                             
                                         }
                                     }
+                                Toggle("", isOn: $pikachuUsed)
+                            }
+                            
+                                
                             
                             
 
                         }
                     }
                     .padding()
-                    .navigationTitle("Pokemon Game")
+                    .navigationTitle("Pokemon Game!")
                 }
                 Tab("Battles", systemImage: "bolt.fill") {
                     List {
                         Text("Who do you want to battle?")
-                        Button() {
+                        
+                        NavigationLink {
+                            HStack {
+                                
+                                Image("mewtwo")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 100, height: 100)
+                                    .clipShape(Rectangle())
+                                Text("VS")
+                                if eeveeUsed == true {
+                                    Image("eevee")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 100, height: 100)
+                                        .clipShape(Rectangle())
+                                }
+                                else if pikachuUsed == true {
+                                    Image("Pikachu")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 100, height: 100)
+                                        .clipShape(Rectangle())
+                                }
+                                else {
+                                    Text("(Please select your pokemon from the homepage)")
+                                }
+                                
+                            }
+                            NavigationLink {
+                                DetailView(pikachu: $pikachuUsed, eevee: $eeveeUsed, mewtwo: $mewtwoBattle, moltres: $moltresBattle, zapdos: $zapdosBattle, articuno: $articunoBattle)
+                            } label: {
+                                Text("Battle!")
+                            }
                             
                         } label: {
                             Image("mewtwo")
@@ -73,8 +125,40 @@ struct ContentView: View {
                                     Text("Mewtwo")
                                 }
                         }
-                        Button() {
-                            
+                        NavigationLink {
+                            HStack {
+                                
+                                Image("moltres")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 100, height: 100)
+                                    .clipShape(Rectangle())
+                                Text("VS")
+                                if eeveeUsed == true {
+                                    Image("eevee")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 100, height: 100)
+                                        .clipShape(Rectangle())
+                                }
+                                else if pikachuUsed == true {
+                                    Image("Pikachu")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 100, height: 100)
+                                        .clipShape(Rectangle())
+                                }
+                                else {
+                                    Text("(Please select your pokemon from the homepage)")
+                                }
+                                
+                            }
+                            NavigationLink {
+                                
+                                DetailView(pikachu: $pikachuUsed, eevee: $eeveeUsed, mewtwo: $mewtwoBattle, moltres: $moltresBattle,zapdos: $zapdosBattle, articuno: $articunoBattle)
+                            } label: {
+                                Text("Battle!")
+                            }
                         } label: {
                             Image("moltres")
                                 .resizable()
