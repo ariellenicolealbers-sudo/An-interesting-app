@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State var eeveeUsed = false
-    @State var pikachuUsed = false
+    @State var pikachuUsed = true
     @State var mewtwoBattle = false
     @State var moltresBattle = false
     @State var zapdosBattle = false
@@ -29,6 +29,12 @@ struct ContentView: View {
                                     .clipShape(Rectangle())
                                     .contextMenu {
                                         Text("Eevee")
+                                        Text("Normal type pokemon")
+                                        Text("60 XP")
+                                        Divider()
+                                        Text("Weakness: Fighting-type pokemon")
+                                        Text("Immune to Ghost-type moves")
+                                        Divider()
                                         Text("Moves:")
                                         Button("Tackle") {
                                             
@@ -109,6 +115,9 @@ struct ContentView: View {
                                 }
                                 
                             }
+                            Button("Confirm"){
+                                mewtwoBattle = true
+                            }
                             NavigationLink {
                                 DetailView(pikachu: $pikachuUsed, eevee: $eeveeUsed, mewtwo: $mewtwoBattle, moltres: $moltresBattle, zapdos: $zapdosBattle, articuno: $articunoBattle)
                             } label: {
@@ -153,6 +162,9 @@ struct ContentView: View {
                                 }
                                 
                             }
+                            Button("Confirm"){
+                                moltresBattle = true
+                            }
                             NavigationLink {
                                 
                                 DetailView(pikachu: $pikachuUsed, eevee: $eeveeUsed, mewtwo: $mewtwoBattle, moltres: $moltresBattle,zapdos: $zapdosBattle, articuno: $articunoBattle)
@@ -169,9 +181,50 @@ struct ContentView: View {
                                     Text("Moltres")
                                 }
                         }
-                        Button() {
+                        NavigationLink {
+                            HStack {
+                                
+                                Image("zapdos")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 100, height: 100)
+                                    .clipShape(Rectangle())
+                                Text("VS")
+                                if eeveeUsed == true {
+                                    Image("eevee")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 100, height: 100)
+                                        .clipShape(Rectangle())
+                                }
+                                else if pikachuUsed == true {
+                                    Image("Pikachu")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 100, height: 100)
+                                        .clipShape(Rectangle())
+                                }
+                                else {
+                                    Text("(Please select your pokemon from the homepage)")
+                                }
+                                
+                            }
+                            Button("Confirm"){
+                                zapdosBattle = true
+                            }
+                            NavigationLink {
+                                
+                                DetailView(pikachu: $pikachuUsed, eevee: $eeveeUsed, mewtwo: $mewtwoBattle, moltres: $moltresBattle,zapdos: $zapdosBattle, articuno: $articunoBattle)
+                            } label: {
+                                Text("Start Battle! (ur cooked btw)")
+                                    .font(.headline)
+                                    .foregroundColor(.white)
+                                    .padding()
+                                    .frame(maxWidth: .infinity)
+                                    .background(Color.blue)
+                                    .cornerRadius(10)                            }
                             
-                        } label: {
+                            } label: {
                             Image("zapdos")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
@@ -181,9 +234,44 @@ struct ContentView: View {
                                     Text("Zapdos")
                                 }
                         }
-                        Button() {
-                            
-                        } label: {
+                        NavigationLink {
+                            HStack {
+                                
+                                Image("articuno")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 100, height: 100)
+                                    .clipShape(Rectangle())
+                                Text("VS")
+                                if eeveeUsed == true {
+                                    Image("eevee")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 100, height: 100)
+                                        .clipShape(Rectangle())
+                                }
+                                else if pikachuUsed == true {
+                                    Image("Pikachu")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 100, height: 100)
+                                        .clipShape(Rectangle())
+                                }
+                                else {
+                                    Text("(Please select your pokemon from the homepage)")
+                                }
+                                
+                            }
+                            Button("Confirm"){
+                                articunoBattle = true
+                            }
+                            NavigationLink {
+                                
+                                DetailView(pikachu: $pikachuUsed, eevee: $eeveeUsed, mewtwo: $mewtwoBattle, moltres: $moltresBattle,zapdos: $zapdosBattle, articuno: $articunoBattle)
+                            } label: {
+                                Text("Battle!")
+                            }
+                            } label: {
                             Image("articuno")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)

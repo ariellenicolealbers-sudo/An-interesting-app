@@ -14,31 +14,359 @@ struct DetailView: View {
     @Binding var moltres: Bool
     @Binding var zapdos: Bool
     @Binding var articuno: Bool
+    
     var body: some View {
         NavigationStack {
             VStack {
+                // MARK: - MEWTWO
                 if mewtwo == true {
+                    Image("mewtwo")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 200, height: 200)
+                    
+                    Text("HP: 106")
+                    
                     if pikachu == true {
-                        HStack {
-                            Spacer()
-                            Image("mewtwo")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 100, height: 100)
-                                .clipShape(Rectangle())
+                        Spacer()
+                        Text("HP: 35")
+                        Image("Pikachu")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 200, height: 200)
+                        List {
+                            NavigationLink {
+                                Text("YOU LOSE!")
+                                    .font(.largeTitle)
+                                    .bold()
+                                    .foregroundColor(.red)
+                            } label: {
+                                Text("Thunderbolt! (80)")
+                            }
+                            NavigationLink {
+                                Text("YOU LOSE!")
+                                    .font(.largeTitle)
+                                    .bold()
+                                    .foregroundColor(.red)
+                            } label: {
+                                Text("Iron Tail! (30)")
+                            }
+                            NavigationLink {
+                                Text("YOU LOSE!")
+                                    .font(.largeTitle)
+                                    .bold()
+                                    .foregroundColor(.red)
+                            } label: {
+                                Text("Quick Attack! (40)")
+                            }
+                            NavigationLink {
+                                Text("YOU LOSE!")
+                                    .font(.largeTitle)
+                                    .bold()
+                                    .foregroundColor(.red)
+                            } label: {
+                                Text("Electro Ball! (40)")
+                            }
                         }
-                        
                     }
+                    
                     if eevee == true {
-                        
+                        Spacer()
+                        Text("HP: 55")
+                        Image("eevee")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 200, height: 200)
+                        List {
+                            NavigationLink {
+                                Text("YOU LOSE!")
+                                    .font(.largeTitle)
+                                    .bold()
+                                    .foregroundColor(.red)
+                            } label: {
+                                Text("Tackle! (80)")
+                            }
+                            NavigationLink {
+                                Text("YOU LOSE!")
+                                    .font(.largeTitle)
+                                    .bold()
+                                    .foregroundColor(.red)
+                            } label: {
+                                Text("Swift! (30)")
+                            }
+                            NavigationLink {
+                                Text("YOU LOSE!")
+                                    .font(.largeTitle)
+                                    .bold()
+                                    .foregroundColor(.red)
+                            } label: {
+                                Text("Double-edge! (40)")
+                            }
+                        }
                     }
                 }
+                
+                // MARK: - MOLTRES
                 if moltres == true {
+                    Image("moltres")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 200, height: 200)
+                    
+                    Text("HP: 106")
+                    
                     if pikachu == true {
-                        
+                        Spacer()
+                        Text("HP: 35")
+                        Image("Pikachu")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 200, height: 200)
+                        List {
+                            NavigationLink {
+                                Text("YOU LOSE!")
+                                    .font(.largeTitle)
+                                    .bold()
+                                    .foregroundColor(.red)
+                            } label: {
+                                Text("Thunderbolt! (80)")
+                            }
+                            NavigationLink {
+                                Text("YOU LOSE!")
+                                    .font(.largeTitle)
+                                    .bold()
+                                    .foregroundColor(.red)
+                            } label: {
+                                Text("Iron Tail! (30)")
+                            }
+                            NavigationLink {
+                                Text("YOU LOSE!")
+                                    .font(.largeTitle)
+                                    .bold()
+                                    .foregroundColor(.red)
+                            } label: {
+                                Text("Quick Attack! (40)")
+                            }
+                            NavigationLink {
+                                Text("YOU LOSE!")
+                                    .font(.largeTitle)
+                                    .bold()
+                                    .foregroundColor(.red)
+                            } label: {
+                                Text("Electro Ball! (40)")
+                            }
+                        }
                     }
+                    
                     if eevee == true {
-                        
+                        Spacer()
+                        Text("HP: 55")
+                        Image("eevee")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 200, height: 200)
+                        List {
+                            NavigationLink {
+                                Text("YOU LOSE!")
+                                    .font(.largeTitle)
+                                    .bold()
+                                    .foregroundColor(.red)
+                            } label: {
+                                Text("Tackle! (80)")
+                            }
+                            NavigationLink {
+                                Text("YOU LOSE!")
+                                    .font(.largeTitle)
+                                    .bold()
+                                    .foregroundColor(.red)
+                            } label: {
+                                Text("Swift! (30)")
+                            }
+                            NavigationLink {
+                                Text("YOU LOSE!")
+                                    .font(.largeTitle)
+                                    .bold()
+                                    .foregroundColor(.red)
+                            } label: {
+                                Text("Double-edge! (40)")
+                            }
+                        }
+                    }
+                }
+                
+                // MARK: - ZAPDOS
+                if zapdos == true {
+                    Image("zapdos")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 200, height: 200)
+                    
+                    Text("HP: 106")
+                    
+                    if pikachu == true {
+                        Spacer()
+                        Text("HP: 35")
+                        Image("Pikachu")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 200, height: 200)
+                        List {
+                            NavigationLink {
+                                Text("YOU LOSE!")
+                                    .font(.largeTitle)
+                                    .bold()
+                                    .foregroundColor(.red)
+                            } label: {
+                                Text("Thunderbolt! (80)")
+                            }
+                            NavigationLink {
+                                Text("YOU LOSE!")
+                                    .font(.largeTitle)
+                                    .bold()
+                                    .foregroundColor(.red)
+                            } label: {
+                                Text("Iron Tail! (30)")
+                            }
+                            NavigationLink {
+                                Text("YOU LOSE!")
+                                    .font(.largeTitle)
+                                    .bold()
+                                    .foregroundColor(.red)
+                            } label: {
+                                Text("Quick Attack! (40)")
+                            }
+                            NavigationLink {
+                                Text("YOU LOSE!")
+                                    .font(.largeTitle)
+                                    .bold()
+                                    .foregroundColor(.red)
+                            } label: {
+                                Text("Electro Ball! (40)")
+                            }
+                        }
+                    }
+                    
+                    if eevee == true {
+                        Spacer()
+                        Text("HP: 55")
+                        Image("eevee")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 200, height: 200)
+                        List {
+                            NavigationLink {
+                                Text("YOU LOSE!")
+                                    .font(.largeTitle)
+                                    .bold()
+                                    .foregroundColor(.red)
+                            } label: {
+                                Text("Tackle! (80)")
+                            }
+                            NavigationLink {
+                                Text("YOU LOSE!")
+                                    .font(.largeTitle)
+                                    .bold()
+                                    .foregroundColor(.red)
+                            } label: {
+                                Text("Swift! (30)")
+                            }
+                            NavigationLink {
+                                Text("YOU LOSE!")
+                                    .font(.largeTitle)
+                                    .bold()
+                                    .foregroundColor(.red)
+                            } label: {
+                                Text("Double-edge! (40)")
+                            }
+                        }
+                    }
+                }
+                
+                // MARK: - ARTICUNO
+                if articuno == true {
+                    Image("articuno")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 200, height: 200)
+                    
+                    Text("HP: 106")
+                    
+                    if pikachu == true {
+                        Spacer()
+                        Text("HP: 35")
+                        Image("Pikachu")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 200, height: 200)
+                        List {
+                            NavigationLink {
+                                Text("YOU LOSE!")
+                                    .font(.largeTitle)
+                                    .bold()
+                                    .foregroundColor(.red)
+                            } label: {
+                                Text("Thunderbolt! (80)")
+                            }
+                            NavigationLink {
+                                Text("YOU LOSE!")
+                                    .font(.largeTitle)
+                                    .bold()
+                                    .foregroundColor(.red)
+                            } label: {
+                                Text("Iron Tail! (30)")
+                            }
+                            NavigationLink {
+                                Text("YOU LOSE!")
+                                    .font(.largeTitle)
+                                    .bold()
+                                    .foregroundColor(.red)
+                            } label: {
+                                Text("Quick Attack! (40)")
+                            }
+                            NavigationLink {
+                                Text("YOU LOSE!")
+                                    .font(.largeTitle)
+                                    .bold()
+                                    .foregroundColor(.red)
+                            } label: {
+                                Text("Electro Ball! (40)")
+                            }
+                        }
+                    }
+                    
+                    if eevee == true {
+                        Spacer()
+                        Text("HP: 55")
+                        Image("eevee")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 200, height: 200)
+                        List {
+                            NavigationLink {
+                                Text("YOU LOSE!")
+                                    .font(.largeTitle)
+                                    .bold()
+                                    .foregroundColor(.red)
+                            } label: {
+                                Text("Tackle! (80)")
+                            }
+                            NavigationLink {
+                                Text("YOU LOSE!")
+                                    .font(.largeTitle)
+                                    .bold()
+                                    .foregroundColor(.red)
+                            } label: {
+                                Text("Swift! (30)")
+                            }
+                            NavigationLink {
+                                Text("YOU LOSE!")
+                                    .font(.largeTitle)
+                                    .bold()
+                                    .foregroundColor(.red)
+                            } label: {
+                                Text("Double-edge! (40)")
+                            }
+                        }
                     }
                 }
             }
@@ -46,7 +374,6 @@ struct DetailView: View {
         }
     }
 }
-
 #Preview {
-    DetailView(pikachu: .constant(true), eevee: .constant(true), mewtwo: .constant(true), moltres: .constant(true), zapdos: .constant(true), articuno: .constant(true))
+        DetailView(pikachu: .constant(false), eevee: .constant(true), mewtwo: .constant(true), moltres: .constant(false), zapdos: .constant(true), articuno: .constant(true))
 }
